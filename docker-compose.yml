@@ -1,0 +1,16 @@
+networks:
+  my-network:
+    driver: bridge
+
+services:
+  clickhouse:
+    image: docker.io/bitnami/clickhouse:24.3.7
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    ports:
+      - '8123:8123'
+    volumes:
+      - ./clickhouse_data:/bitnami/clickhouse
+      - ./clickhouse_config/override.xml:/bitnami/clickhouse/etc/conf.d/override.xml:ro
+    networks:
+      - my-network

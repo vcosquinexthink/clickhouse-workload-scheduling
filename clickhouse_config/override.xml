@@ -1,0 +1,12 @@
+<clickhouse>
+  <storage_configuration>
+    <disks>
+      <d2><type>local</type><path>./disk2/clickhouse/</path></d2>
+      <d3><type>local</type><path>./disk3/clickhouse/</path></d3>
+    </disks>
+    <policies>
+      <d2_main><volumes><main><disk>d2</disk></main></volumes></d2_main>
+      <d3_main><volumes><main><disk>d3</disk></main></volumes></d3_main>
+    </policies>
+  </storage_configuration>
+</clickhouse>
